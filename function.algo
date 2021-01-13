@@ -1,0 +1,38 @@
+FUNCTION  dot_product(v1:ARRAY-OF Float[],v2:ARRAY-OF Float[]):  Float
+VAR 
+ i: Integer;
+ produit: Float;
+
+ Begin
+  produit:=0;
+  For i FROM 0 TO v1.length-1 STEP 1 DO
+  produit:=produit+v1[i]*v2[i];
+ END-FOR;
+ RETURN(produit);
+END
+
+
+
+ALGORITHM dotProduct
+VAR
+    vector_a : ARRAY-OF Float[10];
+    vector_b : ARRAY-OF Float[10];
+    float result;
+
+BEGIN
+  
+//initialisation des deux vecteurs 
+ vector_a={10,1,6.5,8,9};
+ vector_b={3,2,6,2.2,1};
+
+
+//appel de la procedure
+ result:=dot_product(vector_a,vector_b);
+
+
+//test de l'orthogonalité
+ if(result=0) THEN write("the vectors are orthogonal");
+ else write("The vectors aren't orthogonal ");
+ END-IF
+
+END
